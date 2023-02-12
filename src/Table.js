@@ -6,6 +6,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import InfoCard from './components/InfoCard/InfoCard';
+import { useState } from 'react';
 
 import * as opportunities from "./opportunities.json";
 
@@ -15,11 +17,22 @@ export default function BasicTable() {
    */
   const data = opportunities.default;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [cardInfo, setCardInfo] = useState();
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
+
   function handleRowClick(event, row) {
     console.log("row", row);
+    setCardInfo(row);
+    togglePopup();
   }
 
   return (
+    <>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -56,5 +69,11 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    {isOpen && <InfoCard
+      handleClose={togglePopup}
+      data={cardInfo}
+    />}
+    </>
+    
   );
 }
