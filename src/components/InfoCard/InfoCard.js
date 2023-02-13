@@ -17,11 +17,10 @@ import { Chart } from 'react-google-charts';
 const InfoCard = props => {
 
     const allProbabilityHistory = props.data.probabilityHistory;
-
-    const myArray = [];
-    myArray.push(['Days Ago', 'PX Prob', 'Rep Prob']);
+    const probabilityHistoryArrayHolder = [];
+    probabilityHistoryArrayHolder.push(['Days Ago', 'PX Prob', 'Rep Prob']);
     allProbabilityHistory.forEach(e => {
-        myArray.push([e.daysAgo, e.pilytixProb, e.repProb]);
+        probabilityHistoryArrayHolder.push([e.daysAgo, e.pilytixProb, e.repProb]);
     });
 
     // const [data] = useState([
@@ -32,7 +31,7 @@ const InfoCard = props => {
     //     ['7', 0.25, 0.2]
     // ]);
 
-    const [data] = useState(myArray);
+    const [probabilityHistoryDataArray] = useState(probabilityHistoryArrayHolder);
 
     return (
         <div className="popup-box">
@@ -100,7 +99,7 @@ const InfoCard = props => {
                             //width={'400px'}
                             height={'300px'}
                             chartType="Bar"
-                            data={data}
+                            data={probabilityHistoryDataArray}
                         />
 
                     </CardContent>
