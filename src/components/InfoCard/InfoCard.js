@@ -13,6 +13,7 @@ import TableRow from "@mui/material/TableRow";
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { Chart } from 'react-google-charts';
+import Factors from '../Factors/Factors';
 
 const InfoCard = props => {
 
@@ -22,15 +23,6 @@ const InfoCard = props => {
     allProbabilityHistory.forEach(e => {
         probabilityHistoryArrayHolder.push([e.daysAgo, e.pilytixProb, e.repProb]);
     });
-
-    // const [data] = useState([
-    //     ['Days Ago', 'PX Prob', 'Rep Prob'],
-    //     ['28', 0.11, 0.05],
-    //     ['21', 0.1, 0.1],
-    //     ['14', 0.17, 0.2],
-    //     ['7', 0.25, 0.2]
-    // ]);
-
     const [probabilityHistoryDataArray] = useState(probabilityHistoryArrayHolder);
 
     return (
@@ -101,6 +93,12 @@ const InfoCard = props => {
                             chartType="Bar"
                             data={probabilityHistoryDataArray}
                         />
+
+
+
+                        <Factors title="PX Factors Increasing Win" data={props.data.pilytixFactorsIncreasingWin} sort="desc" />
+                        <Factors title="PX Factors Decreasing Win" data={props.data.pilytixFactorsDecreasingWin} sort="asc" />
+
 
                     </CardContent>
                 </Card>
