@@ -10,20 +10,16 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
-import { Chart } from 'react-google-charts';
 import Factors from '../Factors/Factors';
+import ProbabilityHistory from '../ProbabilityHistory/ProbabilityHistory';
 
 const InfoCard = props => {
 
-    const allProbabilityHistory = props.data.probabilityHistory;
-    const probabilityHistoryArrayHolder = [];
-    probabilityHistoryArrayHolder.push(['Days Ago', 'PX Prob', 'Rep Prob']);
-    allProbabilityHistory.forEach(e => {
-        probabilityHistoryArrayHolder.push([e.daysAgo, e.pilytixProb, e.repProb]);
-    });
-    const [probabilityHistoryDataArray] = useState(probabilityHistoryArrayHolder);
+    // EXTRACT GRAPH TO STANDALONE COMPONENT
+    // add if for no data in each section
+    // restrict scrolls
+    // decrease first table width
+    // fix alignment of factors cards
 
     return (
         <div className="popup-box">
@@ -82,17 +78,7 @@ const InfoCard = props => {
                             </Table>
                         </TableContainer>
 
-                        <br />
-                        <Typography variant="h5" >
-                            Probability History
-                        </Typography>
-
-                        <Chart
-                            //width={'400px'}
-                            height={'300px'}
-                            chartType="Bar"
-                            data={probabilityHistoryDataArray}
-                        />
+                        <ProbabilityHistory data={props.data.probabilityHistory} />
 
 
 
