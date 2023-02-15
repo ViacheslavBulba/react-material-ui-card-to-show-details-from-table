@@ -9,23 +9,13 @@ import ProbabilityHistory from '../ProbabilityHistory/ProbabilityHistory';
 import TopLevelData from '../TopLevelData/TopLevelData';
 
 const InfoCard = props => {
-
-    // restrict scrolls
-    // decrease first table width
-    // fix alignment of factors cards
-
     return (
         <div className="popup-box">
             <div className="box">
-                {/* <span className="close-icon" onClick={props.handleClose}>x</span> */}
-                <Card sx={{ maxWidth: 600 }} aria-label="opportunity details card">
+                <span className="close-icon" onClick={props.handleClose}><CloseIcon /></span>
+                <Card aria-label="opportunity details card">
                     <CardContent>
                         <CardHeader
-                            action={
-                                <IconButton onClick={props.handleClose}>
-                                    <CloseIcon />
-                                </IconButton>
-                            }
                             title={props.data.oppName}
                         />
 
