@@ -6,7 +6,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 
 const TopLevelData = props => {
-
     return (
         <>
             <TableContainer component={Paper}>

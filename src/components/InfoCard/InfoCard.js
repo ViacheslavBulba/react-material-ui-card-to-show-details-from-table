@@ -4,12 +4,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import { CardHeader, IconButton } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableRow from "@mui/material/TableRow";
 import Factors from '../Factors/Factors';
 import ProbabilityHistory from '../ProbabilityHistory/ProbabilityHistory';
 import TopLevelData from '../TopLevelData/TopLevelData';
@@ -36,9 +30,9 @@ const InfoCard = props => {
                             title={props.data.oppName}
                         />
 
-                        <TopLevelData data={props.data}/>
+                        <TopLevelData data={props.data} />
 
-                        
+
 
                         <ProbabilityHistory data={props.data.probabilityHistory} />
 
