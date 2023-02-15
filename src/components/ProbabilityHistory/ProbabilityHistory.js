@@ -19,9 +19,7 @@ const ProbabilityHistory = props => {
             <Typography variant="h5" >
                 Probability History
             </Typography>
-
             <Chart
-                //width={'400px'}
                 height={'300px'}
                 chartType="Bar"
                 data={probabilityHistoryDataArray}
