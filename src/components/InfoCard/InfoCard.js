@@ -18,7 +18,7 @@ const InfoCard = props => {
         <div className="popup-box">
             <div className="box">
                 {/* <span className="close-icon" onClick={props.handleClose}>x</span> */}
-                <Card sx={{ maxWidth: 600 }}>
+                <Card sx={{ maxWidth: 600 }} aria-label="opportunity details card">
                     <CardContent>
                         <CardHeader
                             action={

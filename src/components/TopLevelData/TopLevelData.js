@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 const TopLevelData = props => {
     return (
         <>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} aria-label="top level details table on the opportunity card">
                 <Table>
                     <TableBody>
                         <TableRow>

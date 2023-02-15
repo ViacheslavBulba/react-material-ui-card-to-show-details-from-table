@@ -23,6 +23,7 @@ const ProbabilityHistory = props => {
                 height={'300px'}
                 chartType="Bar"
                 data={probabilityHistoryDataArray}
+                aria-label="probability history bar chart"
             />
         </>
     );

@@ -34,7 +34,7 @@ export default function BasicTable() {
   return (
     <>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} aria-label="opportunities table">
           <TableHead>
             <TableRow>
               <TableCell align="left">Opp Name</TableCell>
