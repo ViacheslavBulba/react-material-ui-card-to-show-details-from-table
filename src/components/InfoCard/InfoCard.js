@@ -10,7 +10,6 @@ import TopLevelData from '../TopLevelData/TopLevelData';
 
 const InfoCard = props => {
 
-    // add if for no data in each section
     // restrict scrolls
     // decrease first table width
     // fix alignment of factors cards
@@ -32,15 +31,11 @@ const InfoCard = props => {
 
                         <TopLevelData data={props.data} />
 
+                        {props.data.probabilityHistory && <ProbabilityHistory data={props.data.probabilityHistory} />}
 
+                        {props.data.pilytixFactorsIncreasingWin && <Factors title="PX Factors Increasing Win" data={props.data.pilytixFactorsIncreasingWin} sort="desc" />}
 
-                        <ProbabilityHistory data={props.data.probabilityHistory} />
-
-
-
-                        <Factors title="PX Factors Increasing Win" data={props.data.pilytixFactorsIncreasingWin} sort="desc" />
-                        <Factors title="PX Factors Decreasing Win" data={props.data.pilytixFactorsDecreasingWin} sort="asc" />
-
+                        {props.data.pilytixFactorsDecreasingWin && <Factors title="PX Factors Decreasing Win" data={props.data.pilytixFactorsDecreasingWin} sort="asc" />}
 
                     </CardContent>
                 </Card>
