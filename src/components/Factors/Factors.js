@@ -14,7 +14,7 @@ const Factors = props => {
                 {props.title}
             </Typography>
             <br />
-            <Grid container direction="row" justifyContent="center" alignItems="center" spacing={2} aria-label="factors table">
+            <Grid container direction="row" justifyContent="center" alignItems="flex-start" spacing={2} aria-label="factors table">
                 {props.data.sort((a, b) => (b.weight.value - a.weight.value) * sortOrder).map(item => (
                     <Grid item key={item.name}>
                         <Card variant="outlined" sx={{ width: 250 }}>
