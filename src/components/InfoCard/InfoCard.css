@@ -5,9 +5,9 @@
     height: 100vh;
     top: 0;
     left: 0;
-  }
-   
-  .box {
+}
+
+.box {
     position: relative;
     width: 70%;
     margin: 0 auto;
@@ -18,9 +18,9 @@
     border-radius: 4px;
     border: 1px solid #999;
     overflow: auto;
-  }
-   
-  .close-icon {
+}
+
+.close-icon {
     cursor: pointer;
     position: fixed;
     right: calc(15% - 30px);
@@ -31,9 +31,9 @@
     border-radius: 50%;
     text-align: center;
     border: 1px solid #999;
-  }
+}
 
-  .arrow-forward-icon {
+.arrow-forward-icon {
     cursor: pointer;
     position: fixed;
     right: calc(15% - 30px);
@@ -44,9 +44,9 @@
     border-radius: 50%;
     text-align: center;
     border: 1px solid #999;
-  }
+}
 
-  .arrow-backward-icon {
+.arrow-backward-icon {
     cursor: pointer;
     position: fixed;
     left: calc(15% - 30px);
@@ -57,4 +57,4 @@
     border-radius: 50%;
     text-align: center;
     border: 1px solid #999;
-  }
+}

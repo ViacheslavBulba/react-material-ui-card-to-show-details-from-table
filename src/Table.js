@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import * as React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import InfoCard from './components/InfoCard/InfoCard';
 
 import * as opportunities from "./opportunities.json";
@@ -19,11 +19,22 @@ export default function BasicTable() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [disableScrollOnBody, setDisableScrollOnBody] = useState(false);
+
   const [cardInfo, setCardInfo] = useState();
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
+    setDisableScrollOnBody(!disableScrollOnBody);
   }
+
+  useEffect(() => {
+    if (disableScrollOnBody) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+ }, [disableScrollOnBody]);
 
   function handleRowClick(event, row) {
     console.log("row", row);
