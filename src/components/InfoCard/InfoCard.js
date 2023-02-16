@@ -10,7 +10,7 @@ import * as opportunities from "../../opportunities.json";
 import Factors from '../Factors/Factors';
 import ProbabilityHistory from '../ProbabilityHistory/ProbabilityHistory';
 import TopLevelData from '../TopLevelData/TopLevelData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const InfoCard = props => {
 
@@ -32,6 +32,49 @@ const InfoCard = props => {
         }
         setCardInfo(previousOpportunity);
     }
+
+    const useKeyPress = function(targetKey) {
+        const [keyPressed, setKeyPressed] = useState(false);
+      
+        function downHandler({ key }) {
+          if (key === targetKey) {
+            setKeyPressed(true);
+          }
+        }
+      
+        const upHandler = ({ key }) => {
+          if (key === targetKey) {
+            setKeyPressed(false);
+          }
+        };
+      
+        useEffect(() => {
+          window.addEventListener("keydown", downHandler);
+          window.addEventListener("keyup", upHandler);
+      
+          return () => {
+            window.removeEventListener("keydown", downHandler);
+            window.removeEventListener("keyup", upHandler);
+          };
+        });
+      
+        return keyPressed;
+      };
+
+      const arrowLeft = useKeyPress("ArrowLeft");
+      const arrowRight = useKeyPress("ArrowRight");
+
+      useEffect(() => {
+        if (arrowLeft) {
+            handlePreviousCardArrowClick()
+        }
+      }, [arrowLeft]);
+
+      useEffect(() => {
+        if (arrowRight) {
+            handleNextCardArrowClick()
+        }
+      }, [arrowRight]);
 
     return (
         <div className="popup-box">
