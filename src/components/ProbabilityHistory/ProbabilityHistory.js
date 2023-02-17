@@ -27,6 +27,7 @@ const ProbabilityHistory = props => {
             <Typography variant="h5" >
                 Probability History
             </Typography>
+            <br />
             <Chart
                 height={'300px'}
                 chartType="Bar"

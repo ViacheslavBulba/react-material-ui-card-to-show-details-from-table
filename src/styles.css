@@ -1,4 +1,14 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #eff2f6;
+}
+
+.logo {
+    width: 220px;
+    height: 45px;
+    margin-top: 20px;
 }
