@@ -36,9 +36,10 @@ const InfoCard = props => {
     const useKeyPress = function(targetKey) {
         const [keyPressed, setKeyPressed] = useState(false);
       
-        function downHandler({ key }) {
-          if (key === targetKey) {
+        function downHandler(event) {
+          if (event.key === targetKey) {
             setKeyPressed(true);
+            event.preventDefault(); // to prevent horizontal scroll on arrow keys in table when a card is open
           }
         }
       
@@ -51,7 +52,6 @@ const InfoCard = props => {
         useEffect(() => {
           window.addEventListener("keydown", downHandler);
           window.addEventListener("keyup", upHandler);
-      
           return () => {
             window.removeEventListener("keydown", downHandler);
             window.removeEventListener("keyup", upHandler);
