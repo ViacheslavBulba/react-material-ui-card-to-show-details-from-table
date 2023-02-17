@@ -63,18 +63,25 @@ const InfoCard = props => {
 
       const arrowLeft = useKeyPress("ArrowLeft");
       const arrowRight = useKeyPress("ArrowRight");
+      const escape = useKeyPress("Escape");
 
       useEffect(() => {
         if (arrowLeft) {
-            handlePreviousCardArrowClick()
+            handlePreviousCardArrowClick();
         }
       }, [arrowLeft]);
 
       useEffect(() => {
         if (arrowRight) {
-            handleNextCardArrowClick()
+            handleNextCardArrowClick();
         }
       }, [arrowRight]);
+
+      useEffect(() => {
+        if (escape) {
+          props.handleClose();
+        }
+      }, [escape]);
 
     return (
         <div className="popup-box">
@@ -89,8 +96,8 @@ const InfoCard = props => {
                         />
                         <TopLevelData data={cardInfo} />
                         {cardInfo.probabilityHistory && <ProbabilityHistory data={cardInfo.probabilityHistory} />}
-                        {cardInfo.pilytixFactorsIncreasingWin && <Factors title="PX Factors Increasing Win" data={cardInfo.pilytixFactorsIncreasingWin} sort="desc" />}
-                        {cardInfo.pilytixFactorsDecreasingWin && <Factors title="PX Factors Decreasing Win" data={cardInfo.pilytixFactorsDecreasingWin} sort="asc" />}
+                        {cardInfo.pilytixFactorsIncreasingWin && <Factors title="PX Factors Increasing Win" data={cardInfo.pilytixFactorsIncreasingWin} sort="desc" backgroundColor="#c9ffcf"/>}
+                        {cardInfo.pilytixFactorsDecreasingWin && <Factors title="PX Factors Decreasing Win" data={cardInfo.pilytixFactorsDecreasingWin} sort="asc" backgroundColor="#fae1e1" />}
                     </CardContent>
                 </Card>
             </div>

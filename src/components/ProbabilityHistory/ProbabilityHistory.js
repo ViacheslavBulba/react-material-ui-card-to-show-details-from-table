@@ -34,9 +34,9 @@ const ProbabilityHistory = props => {
         },
     };
 
-    let labels = [];
-    let pxProbArray = [];
-    let repProbArray = [];
+    const labels = [];
+    const pxProbArray = [];
+    const repProbArray = [];
 
     let allProbabilityHistory = props.data.sort((a, b) => (a.daysAgo - b.daysAgo));
 
@@ -52,13 +52,13 @@ const ProbabilityHistory = props => {
             {
                 label: 'PX Prob',
                 data: pxProbArray,
-                backgroundColor: 'rgb(75, 192, 192)',
+                backgroundColor: '#3CCBAB',
                 stack: 'Stack 0',
             },
             {
                 label: 'Rep Prob',
                 data: repProbArray,
-                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: '#73A9FA',
                 stack: 'Stack 1',
             },
         ],

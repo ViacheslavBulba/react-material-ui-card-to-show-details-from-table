@@ -17,19 +17,16 @@ const Factors = props => {
             <Grid container direction="row" justifyContent="center" alignItems="flex-start" spacing={2} aria-label="factors table">
                 {props.data.sort((a, b) => (b.weight.value - a.weight.value) * sortOrder).map(item => (
                     <Grid item key={item.name}>
-                        <Card variant="outlined" sx={{ width: 250 }}>
+                        <Card variant="outlined" sx={{ width: 250, background: props.backgroundColor}}>
                             <CardContent>
                                 <Typography sx={{ fontSize: 14 }} gutterBottom>
-                                    Name: {item.name}
+                                    {item.name}
                                 </Typography>
                                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                    Message: {item.message}
+                                    {item.message}
                                 </Typography>
                                 <Typography sx={{ fontSize: 14 }} gutterBottom>
-                                    Value: {item.weight.value}
-                                </Typography>
-                                <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                                    Description: {item.weight.description}
+                                    {item.weight.description} ({item.weight.value})
                                 </Typography>
                             </CardContent>
                         </Card>
