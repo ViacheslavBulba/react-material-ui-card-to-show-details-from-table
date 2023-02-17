@@ -41,7 +41,7 @@ const ProbabilityHistory = props => {
     let allProbabilityHistory = props.data.sort((a, b) => (a.daysAgo - b.daysAgo));
 
     allProbabilityHistory.forEach(e => {
-        labels.push(e.daysAgo);
+        labels.push(e.daysAgo + ' days');
         pxProbArray.push(e.pilytixProb);
         repProbArray.push(e.repProb);
     });
