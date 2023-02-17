@@ -1,19 +1,11 @@
-Development notes:
+![Screenshot](PILYTIX-1.png)
 
-https://mui.com/material-ui/material-icons/?query=close&selected=Close
+![Screenshot](PILYTIX-2.png)
 
-npm i --legacy-peer-deps
+![Screenshot](PILYTIX-3.png)
 
-npm i @mui/icons-material --force
+![Screenshot](PILYTIX-4.png)
 
-export NODE_OPTIONS=--openssl-legacy-provider
+![Screenshot](PILYTIX-5.png)
 
----npm i uuid --force
-
----npm i @devexpress/dx-react-chart --force
-
----npm i @devexpress/dx-react-chart-material-ui --force
-
----npm i @progress/kendo-react-charts --force
-
-npm i react-google-charts --force
+![Screenshot](PILYTIX-6.png)
